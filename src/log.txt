@@ -1,0 +1,19 @@
+Start: Thu, 22 Jan 2015 11:23:53 -0800
+End: Thu, 22 Jan 2015 12:43:35 -0800
+Tasks: Setup git repository and started looking over assignments
+
+Start: Fri, 23 Jan 2015 18:00:00
+End: Thu, 22 Jan 2015 20:23:53 -0800
+Tasks: Worked on the variables.js and functions.js portion of the assignment
+
+Start: Sun, 25 Jan 2015 20:23:12
+End: Sun, 25 Jan 2015 21:38:15
+Tasks: Worked the objects.js portion of the assignment and went over the others
+
+Start: Sun, 25 Jan 2015 20:23:12
+End: Sun, 25 Jan 2015 21:38:15
+Tasks: Worked on the objects.js portion of the assignment and went over the others
+
+Start: Monday, 25 Jan 2015 17:23:12
+End: Monday, 26 Jan 2015 20:38:15
+Tasks: Went over all files, fixed bugs and completed all the files without any errors
