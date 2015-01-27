@@ -1,3 +1,4 @@
+'use strict';
 /*
 Input:
 a: a whole, positive number
@@ -14,7 +15,9 @@ function variableModification(a) {
   var asString;
   var yourNumberIs;
   //your code here
-
+    plus5 = a + 5;
+    asString = '6';
+    yourNumberIs = 'Your Number is ' + a;
   //end your code
   return [plus5, asString, yourNumberIs, a];
 }
@@ -29,7 +32,11 @@ false otherwise
 */
 function isString(b) {
   //your code here
+  if (typeof b == 'string'){
+    return true;
+  }
   return undefined;
+
   //end your code
 }
 
@@ -42,6 +49,10 @@ return true if c is null, false otherwise
 */
 function isNull(c) {
   //your code here
+    if(c === null && c !== undefined){
+      return true;
+    }
   return undefined;
   //end your code
 }
+
