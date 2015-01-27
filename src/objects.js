@@ -10,7 +10,12 @@
 
 function returnObjectLiteral() {
   //your code here
-  return undefined; //Modify ONLY this line
+  var food = { type: "Goldfish", 
+			   brand: "Pepperidge Farm", 
+			   flavor: "Cheddar", 
+			   count: 2000,				
+		}
+  return food; //Modify ONLY this line
   //end your code
 }
 
@@ -23,21 +28,47 @@ function returnObjectLiteral() {
 *
 * In addition, the following methods should be
 * callable on a MessageLog object:
-* logMessage( {string} messageText, {number} direction) - This should log a
-* message
-* as either being sent or received. A direction of 0 indicates it is a message
+
+* 1. logMessage( {string} messageText, {number} direction) - This should log a
+* message as either being sent or received. A direction of 0 indicates it is a message
 * the user sent. A direction of 1 indicates it is a message the user received.
 * Behavior for other numbers is undefined.
-* getSentMessage({number} n) - returns as a string, the content of the nth most
+
+* 2. getSentMessage({number} n) - returns as a string, the content of the nth most
 * recently sent message. To conserve memory, the object should only keep the
 * last 5 message. n=0 retrieves the most recent n=4 retrieves the least recent
 * of the 5.
-* totalSent() - returns an integer indicating the total number of messages sent
-* totalReceived() - returns an integer indicating the total number of messages
+
+* 3. totalSent() - returns an integer indicating the total number of messages sent
+* 4. totalReceived() - returns an integer indicating the total number of messages
 * received
 */
 
 //your code here
+
+function MessageLog(user) {
+	this.testLog = [];
+	this.testLogSent = [];
+	
+	this.user = user;
+	this.logMessage = function (messageText, direction){
+		if(direction === 0){
+			this.testLogSent.unshift(messageText);
+		}
+		if(direction === 1){
+			this.testLog.unshift(messageText);
+		}
+	}
+	this.getSentMessage = function (n){
+		return this.testLogSent[n];
+	}
+	this.totalSent = function (){
+		return this.testLogSent.length;
+	}
+	this.totalReceived = function (){
+		return this.testLog.length;
+	}
+}
 
 //end your code
 
@@ -48,6 +79,10 @@ function returnObjectLiteral() {
 */
 //your code here
 
+MessageLog.prototype.lastReceivedMessage = function (){
+	var index = this.testLog.length-1;
+	return this.testLog[0];
+}
 //end your code
 
 /**
@@ -58,4 +93,8 @@ function returnObjectLiteral() {
 
 //your code here
 
-//end your code
+var myLog = new MessageLog('BlackHatGuy');
+myLog.logMessage('foo', 1);
+myLog.logMessage('bar', 1);
+myLog.logMessage('baz', 1);
+
